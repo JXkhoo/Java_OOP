@@ -1,0 +1,44 @@
+public class Student {
+	private String name;
+	private String matrix;
+	private String major;
+	private Course[] courseList;
+	private int numOfCourse;
+	
+	public Student(String n, String m, String j)
+	{
+		name = n;
+		matrix = m;
+		major = j;
+		courseList = new Course[10];
+	}
+	
+	public String getName()
+	{ return name; }
+
+	public String getMatrix()
+	{ return matrix; }
+
+	public void registerCourse(Course cs)
+	{
+		courseList[numOfCourse]=cs;
+		numOfCourse++;
+	}
+
+	public int getNumOfCourse()
+	{
+		return numOfCourse;
+	}
+
+	public void printAllInfo()
+	{
+		System.out.println("\nSTUDENT NAME:"+name);
+		System.out.println("NUMBER OF SUBJECT(s) TAKEN:"+numOfCourse);
+		System.out.println("LIST OF SUBJECT(s) TAKEN:");
+		for(int i=0;i<numOfCourse;i++)
+		{
+			Course s=(Course)courseList[i];
+			System.out.println((i+1) +"." +s.getName());
+		}
+	}
+}
